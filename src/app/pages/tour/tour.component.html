@@ -1,0 +1,26 @@
+<dx-data-grid id="gridContainer"
+              [dataSource]="dataSource"
+              [showBorders]="true"
+              [remoteOperations]="true">
+  <dxo-editing
+    mode="popup"
+    [allowUpdating]="true"
+    [allowAdding]="true"
+    [allowDeleting]="true">
+    <dxo-popup
+      title="Thông tin tour"
+      [showTitle]="true"
+      [width]="700"
+      [height]="525">
+    </dxo-popup>
+<!--    <dxo-form>-->
+<!--      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">-->
+<!--        <dxi-item dataField="khTen"></dxi-item>-->
+<!--        <dxi-item dataField="khSdt"></dxi-item>-->
+<!--        <dxi-item dataField="khNgaysinh"></dxi-item>-->
+<!--        <dxi-item dataField="khEmail"></dxi-item>-->
+<!--        <dxi-item dataField="khCmnd"></dxi-item>-->
+<!--      </dxi-item>-->
+<!--    </dxo-form>-->
+  </dxo-editing>
+</dx-data-grid>

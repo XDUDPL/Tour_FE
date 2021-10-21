@@ -1,16 +1,51 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule } from './layouts';
+import { FooterModule, ResetPasswordFormModule, CreateAccountFormModule, ChangePasswordFormModule, LoginFormModule } from './shared/components';
+import { DxDataGridModule } from 'devextreme-angular';
+import { AuthService, ScreenService, AppInfoService } from './shared/services';
+import { UnauthenticatedContentModule } from './unauthenticated-content';
+import { AppRoutingModule } from './app-routing.module';
+import { TourLoaiComponent } from './pages/tour-loai/tour-loai.component';
+import {TourLoaiService} from "./services/tour-loai.service";
+import {KhachhangService} from "./services/khachhang.service";
+import { KhachhangsComponent } from './pages/khachhangs/khachhangs.component';
+import { TourComponent } from './pages/tour/tour.component';
+import { NhanvienComponent } from './pages/nhanvien/nhanvien.component';
+import {TourService} from "./services/tour.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TourLoaiComponent,
+    KhachhangsComponent,
+    TourComponent,
+    NhanvienComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SideNavOuterToolbarModule,
+    SideNavInnerToolbarModule,
+    SingleCardModule,
+    FooterModule,
+    ResetPasswordFormModule,
+    CreateAccountFormModule,
+    ChangePasswordFormModule,
+    LoginFormModule,
+    UnauthenticatedContentModule,
+    AppRoutingModule,
+    DxDataGridModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService,
+    ScreenService,
+    AppInfoService,
+    TourLoaiService,
+    KhachhangService,
+    TourService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
