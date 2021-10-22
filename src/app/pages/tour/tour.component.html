@@ -50,7 +50,7 @@
     <dxo-lookup [dataSource]="LoaiTour" displayExpr="moTaLoai" valueExpr="id"></dxo-lookup>
   </dxi-column>
   <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
-  <div *dxTemplate="let tasks of 'detail'">
-<!--    <detail-grid [key]="tasks.key"></detail-grid>-->
+  <div *dxTemplate="let data of 'detail'">
+    <detail-grid1 [key1]="1"></detail-grid1>
   </div>
 </dx-data-grid>
