@@ -12,6 +12,42 @@ export class TourComponent implements OnInit {
     data: [],
     totalCount: 0
   };
+  LoaiTour: object[] = [
+    {
+      "id": 1,
+      "tenLoai": "Nữ",
+      "moTaLoai":" ALo "
+    },
+    {
+      "id": 2,
+      "tenLoai": "Nam",
+      "moTaLoai":" phát "
+    },
+    {
+      "id": 3,
+      "tenLoai": "vl",
+      "moTaLoai":" gay "
+    },
+  ]
+
+  Tasks: object[] = [
+    {
+      "id": 1,
+      "tenLoai": "Nữ",
+      "moTaLoai":" ALo "
+    },
+    {
+      "id": 2,
+      "tenLoai": "Nam",
+      "moTaLoai":" phát "
+    },
+    {
+      "id": 3,
+      "tenLoai": "vl",
+      "moTaLoai":" gay "
+    },
+  ]
+
   constructor(private tourService: TourService) { }
   getData() : void {
     this.dataSource = new CustomStore({

@@ -1,10 +1,11 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule } from './layouts';
 import { FooterModule, ResetPasswordFormModule, CreateAccountFormModule, ChangePasswordFormModule, LoginFormModule } from './shared/components';
-import { DxDataGridModule } from 'devextreme-angular';
+import { DxDataGridModule,DxTemplateModule } from 'devextreme-angular';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { AppRoutingModule } from './app-routing.module';
@@ -37,7 +38,8 @@ import {TourService} from "./services/tour.service";
     UnauthenticatedContentModule,
     AppRoutingModule,
     DxDataGridModule,
-    HttpClientModule
+    HttpClientModule,
+    DxTemplateModule
   ],
   providers: [AuthService,
     ScreenService,
