@@ -16,6 +16,7 @@ import { KhachhangsComponent } from './pages/khachhangs/khachhangs.component';
 import { TourComponent } from './pages/tour/tour.component';
 import { NhanvienComponent } from './pages/nhanvien/nhanvien.component';
 import {TourService} from "./services/tour.service";
+import { DetailGridComponent } from './pages/tour/detail-grid/detail-grid.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {TourService} from "./services/tour.service";
     TourLoaiComponent,
     KhachhangsComponent,
     TourComponent,
-    NhanvienComponent
+    NhanvienComponent,
+    DetailGridComponent
   ],
   imports: [
     BrowserModule,
