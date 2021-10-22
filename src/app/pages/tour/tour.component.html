@@ -13,14 +13,44 @@
       [width]="700"
       [height]="525">
     </dxo-popup>
-<!--    <dxo-form>-->
-<!--      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">-->
-<!--        <dxi-item dataField="khTen"></dxi-item>-->
-<!--        <dxi-item dataField="khSdt"></dxi-item>-->
-<!--        <dxi-item dataField="khNgaysinh"></dxi-item>-->
-<!--        <dxi-item dataField="khEmail"></dxi-item>-->
-<!--        <dxi-item dataField="khCmnd"></dxi-item>-->
-<!--      </dxi-item>-->
-<!--    </dxo-form>-->
+    <dxo-form>
+      <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+        <dxi-item dataField="tourTen"></dxi-item>
+        <dxi-item dataField="tourMoTa"></dxi-item>
+        <dxi-item dataField="idLoai"> </dxi-item>
+      </dxi-item>
+    </dxo-form>
   </dxo-editing>
+
+  <dxi-column
+    dataField="id"
+    dataType="number"
+    caption="Id">
+  </dxi-column>
+  <dxi-column
+    dataField="tourTen"
+    dataType="string"
+    caption="tourTen">
+  </dxi-column>
+  <dxi-column
+    dataField="tourMoTa"
+    dataType="string"
+    caption="mô tả tour">
+  </dxi-column>
+  <dxi-column
+    dataField="idLoai"
+    dataType="string"
+    caption="tenLoai">
+    <dxo-lookup [dataSource]="LoaiTour" displayExpr="tenLoai" valueExpr="id"></dxo-lookup>
+  </dxi-column>
+  <dxi-column
+    dataField="idLoai"
+    dataType="string"
+    caption="moTaLoai">
+    <dxo-lookup [dataSource]="LoaiTour" displayExpr="moTaLoai" valueExpr="id"></dxo-lookup>
+  </dxi-column>
+  <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
+  <div *dxTemplate="let data of 'detail'">
+    <detail-grid1 [key1]="1"></detail-grid1>
+  </div>
 </dx-data-grid>

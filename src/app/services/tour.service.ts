@@ -13,20 +13,20 @@ const httpOptions = {
 })
 export class TourService {
 
-  private apiUrl: string ='http://localhost:5000/tours';
+  private apiUrl: string ='http://localhost:8080/api/tour';
   constructor(private http: HttpClient) { }
   getAll(): Observable<Tour[]>{
     return this.http.get<Tour[]>(this.apiUrl);
   }
-  delete(khachhang: Khachhang): Observable<Khachhang>{
-    const url = `${this.apiUrl}/${khachhang.id}`;
-    return this.http.delete<Khachhang>(url);
+  delete(tour: Tour): Observable<Tour>{
+    const url = `${this.apiUrl}/${tour.id}`;
+    return this.http.delete<Tour>(url);
   }
-  update(khachhang: Khachhang): Observable<Khachhang>{
-    const url = `${this.apiUrl}/${khachhang.id}`;
-    return this.http.put<Khachhang>(url, khachhang, httpOptions);
+  update(tour: Tour): Observable<Khachhang>{
+    const url = `${this.apiUrl}/${tour.id}`;
+    return this.http.put<Khachhang>(url, tour, httpOptions);
   }
-  create(khachhang: Khachhang): Observable<Khachhang>{
-    return this.http.post<Khachhang>(this.apiUrl, khachhang, httpOptions);
+  create(tour: Tour): Observable<Khachhang>{
+    return this.http.post<Khachhang>(this.apiUrl, tour, httpOptions);
   }
 }
