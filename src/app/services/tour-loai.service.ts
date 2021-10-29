@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TourLoaiService {
-  private apiUrl: string ='http://localhost:5000/tour_loai';
+  private apiUrl: string ='http://localhost:8080/api/tourloai';
   constructor(private http: HttpClient) { }
   getTourLoais(): Observable<Tour_Loai[]>{
     return this.http.get<Tour_Loai[]>(this.apiUrl);
