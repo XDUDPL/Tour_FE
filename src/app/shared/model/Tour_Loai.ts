@@ -1,5 +1,5 @@
 export interface Tour_Loai{
   id?: number;
-  ten_loai: string;
-  mota: string;
+  loaiTen: string;
+  loaiMota: string;
 }
