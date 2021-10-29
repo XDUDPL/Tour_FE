@@ -19,6 +19,7 @@ import {NhanViensComponent } from './pages/nhanviens/nhanviens.component';
 import {TourService} from "./services/tour.service";
 import { DetailGridComponent } from './pages/tour/detail-grid/detail-grid.component';
 import {TourChiTietService} from "./services/tour-chi-tiet.service";
+import { LoaiChiPhiComponent } from './pages/loai-chi-phi/loai-chi-phi.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,10 @@ import {TourChiTietService} from "./services/tour-chi-tiet.service";
     KhachhangsComponent,
     TourComponent,
     DetailGridComponent,
+
+      LoaiChiPhiComponent,
     NhanViensComponent,
+
 
   ],
   imports: [
