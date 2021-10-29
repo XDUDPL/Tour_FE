@@ -14,7 +14,8 @@ import {TourLoaiService} from "./services/tour-loai.service";
 import {KhachhangService} from "./services/khachhang.service";
 import { KhachhangsComponent } from './pages/khachhangs/khachhangs.component';
 import { TourComponent } from './pages/tour/tour.component';
-import { NhanvienComponent } from './pages/nhanvien/nhanvien.component';
+import {NhanVienService} from "./services/nhanvien.service";
+import {NhanViensComponent } from './pages/nhanviens/nhanviens.component';
 import {TourService} from "./services/tour.service";
 import { DetailGridComponent } from './pages/tour/detail-grid/detail-grid.component';
 import {TourChiTietService} from "./services/tour-chi-tiet.service";
@@ -24,9 +25,8 @@ import {TourChiTietService} from "./services/tour-chi-tiet.service";
     TourLoaiComponent,
     KhachhangsComponent,
     TourComponent,
-    NhanvienComponent,
-
     DetailGridComponent,
+    NhanViensComponent,
 
   ],
   imports: [
@@ -50,6 +50,7 @@ import {TourChiTietService} from "./services/tour-chi-tiet.service";
     AppInfoService,
     TourLoaiService,
     KhachhangService,
+    NhanVienService,
     TourService,
     TourChiTietService
   ],
