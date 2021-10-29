@@ -26,6 +26,10 @@ export const navigation = [
       ,{
         text: 'Tour',
         path: '/tour'
+      },
+      {
+        text:' Loại Chi Phí ',
+        path:'/loai-chi-phi'
       }
     ]
   }
