@@ -8,5 +8,5 @@ export interface Khachhang{
 }
 export interface PageResultKhachHang{
   totalCount: number;
-  items: Khachhang[];
+  items: Khachhang[]
 }
