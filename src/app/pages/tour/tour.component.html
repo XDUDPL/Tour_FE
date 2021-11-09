@@ -16,7 +16,7 @@
     <dxo-form>
       <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
         <dxi-item dataField="tourTen"></dxi-item>
-        <dxi-item dataField="tourMota"></dxi-item>
+        <dxi-item dataField="tourMoTa"></dxi-item>
         <dxi-item dataField="idLoai"> </dxi-item>
       </dxi-item>
     </dxo-form>
@@ -33,22 +33,22 @@
     caption="tourTen">
   </dxi-column>
   <dxi-column
-    dataField="tourMota"
+    dataField="tourMoTa"
     dataType="string"
     caption="mô tả tour">
   </dxi-column>
   <dxi-column
-    dataField="loaiTen"
+    dataField="idLoai"
     dataType="string"
     caption="tenLoai">
-    <dxo-lookup [dataSource]="LoaiTour" displayExpr="tenLoai" valueExpr="loaiTen"></dxo-lookup>
+    <dxo-lookup [dataSource]="LoaiTour" displayExpr="tenLoai" valueExpr="id"></dxo-lookup>
   </dxi-column>
-<!--  <dxi-column-->
-<!--    dataField="idLoai"-->
-<!--    dataType="string"-->
-<!--    caption="moTaLoai">-->
-<!--    <dxo-lookup [dataSource]="LoaiTour" displayExpr="moTaLoai" valueExpr="id"></dxo-lookup>-->
-<!--  </dxi-column>-->
+  <dxi-column
+    dataField="idLoai"
+    dataType="string"
+    caption="moTaLoai">
+    <dxo-lookup [dataSource]="LoaiTour" displayExpr="moTaLoai" valueExpr="id"></dxo-lookup>
+  </dxi-column>
   <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
   <div *dxTemplate="let data of 'detail'">
     <detail-grid1 [key1]="1"></detail-grid1>
