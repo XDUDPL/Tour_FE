@@ -22,10 +22,17 @@ export const navigation = [
       },{
         text: 'Khách hàng',
         path: '/khach-hang'
+      },{
+        text: 'Nhân viên',
+        path: '/nhan_vien'
       }
       ,{
         text: 'Tour',
         path: '/tour'
+      },
+      {
+        text:' Loại Chi Phí ',
+        path:'/loai-chi-phi'
       }
     ]
   }

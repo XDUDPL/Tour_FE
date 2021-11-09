@@ -14,20 +14,24 @@ import {TourLoaiService} from "./services/tour-loai.service";
 import {KhachhangService} from "./services/khachhang.service";
 import { KhachhangsComponent } from './pages/khachhangs/khachhangs.component';
 import { TourComponent } from './pages/tour/tour.component';
-import { NhanvienComponent } from './pages/nhanvien/nhanvien.component';
+import {NhanVienService} from "./services/nhanvien.service";
+import {NhanViensComponent } from './pages/nhanviens/nhanviens.component';
 import {TourService} from "./services/tour.service";
 import { DetailGridComponent } from './pages/tour/detail-grid/detail-grid.component';
 import {TourChiTietService} from "./services/tour-chi-tiet.service";
-import { ChiphiComponent } from './pages/chiphi/chiphi.component';
+import { LoaiChiPhiComponent } from './pages/loai-chi-phi/loai-chi-phi.component';
 @NgModule({
   declarations: [
     AppComponent,
     TourLoaiComponent,
     KhachhangsComponent,
     TourComponent,
-    NhanvienComponent,
     DetailGridComponent,
     ChiphiComponent,
+
+      LoaiChiPhiComponent,
+    NhanViensComponent,
+
 
   ],
   imports: [
@@ -51,6 +55,7 @@ import { ChiphiComponent } from './pages/chiphi/chiphi.component';
     AppInfoService,
     TourLoaiService,
     KhachhangService,
+    NhanVienService,
     TourService,
     TourChiTietService
   ],

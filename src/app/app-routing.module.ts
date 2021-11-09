@@ -8,8 +8,9 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import {TourLoaiComponent} from "./pages/tour-loai/tour-loai.component";
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import {KhachhangsComponent} from "./pages/khachhangs/khachhangs.component";
+import {NhanViensComponent} from "./pages/nhanviens/nhanviens.component";
 import {TourComponent} from "./pages/tour/tour.component";
-import {ChiphiComponent} from "./pages/chiphi/chiphi.component";
+import {LoaiChiPhiComponent} from "./pages/loai-chi-phi/loai-chi-phi.component"
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
   {
     path: 'khach-hang',
     component: KhachhangsComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'nhan_vien',
+    component: NhanViensComponent,
     canActivate: [ AuthGuardService ]
   }
   ,
@@ -67,6 +73,11 @@ const routes: Routes = [
     path: 'change-password/:recoveryCode',
     component: ChangePasswordFormComponent,
     canActivate: [ AuthGuardService ]
+  },
+  {
+    path:'loai-chi-phi',
+    component: LoaiChiPhiComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: '**',
