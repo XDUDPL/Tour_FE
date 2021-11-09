@@ -18,6 +18,7 @@ import { NhanvienComponent } from './pages/nhanvien/nhanvien.component';
 import {TourService} from "./services/tour.service";
 import { DetailGridComponent } from './pages/tour/detail-grid/detail-grid.component';
 import {TourChiTietService} from "./services/tour-chi-tiet.service";
+import { ChiphiComponent } from './pages/chiphi/chiphi.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +26,8 @@ import {TourChiTietService} from "./services/tour-chi-tiet.service";
     KhachhangsComponent,
     TourComponent,
     NhanvienComponent,
-
     DetailGridComponent,
+    ChiphiComponent,
 
   ],
   imports: [

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TourService} from "../../services/tour.service";
 import CustomStore from "devextreme/data/custom_store";
+import {TourLoaiService} from "../../services/tour-loai.service";
 
 @Component({
   selector: 'app-tour',
@@ -12,43 +13,28 @@ export class TourComponent implements OnInit {
     data: [],
     totalCount: 0
   };
+
   LoaiTour: object[] = [
     {
       "id": 1,
-      "tenLoai": "Nữ",
-      "moTaLoai":" ALo "
+      "tenLoai": "2 năm",
+      "moTaLoai":" đi đến già "
     },
     {
       "id": 2,
-      "tenLoai": "Nam",
-      "moTaLoai":" phát "
+      "tenLoai": "1 năm",
+      "moTaLoai":" đi đến gần già "
     },
     {
       "id": 3,
-      "tenLoai": "vl",
-      "moTaLoai":" gay "
+      "tenLoai": "ngắn ngày",
+      "moTaLoai":" đi phí tiền "
     },
   ]
 
-  Tasks: object[] = [
-    {
-      "id": 1,
-      "tenLoai": "Nữ",
-      "moTaLoai":" ALo "
-    },
-    {
-      "id": 2,
-      "tenLoai": "Nam",
-      "moTaLoai":" phát "
-    },
-    {
-      "id": 3,
-      "tenLoai": "vl",
-      "moTaLoai":" gay "
-    },
-  ]
 
-  constructor(private tourService: TourService) { }
+  constructor(private tourService: TourService ) { }
+
   getData() : void {
     this.dataSource = new CustomStore({
       load: ()=>{

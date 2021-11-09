@@ -9,6 +9,7 @@ import {TourLoaiComponent} from "./pages/tour-loai/tour-loai.component";
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import {KhachhangsComponent} from "./pages/khachhangs/khachhangs.component";
 import {TourComponent} from "./pages/tour/tour.component";
+import {ChiphiComponent} from "./pages/chiphi/chiphi.component";
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
   {
     path: 'tour',
     component: TourComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'chiphi',
+    component: ChiphiComponent,
     canActivate: [ AuthGuardService ]
   },
   {
