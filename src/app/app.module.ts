@@ -27,6 +27,7 @@ import { LoaiChiPhiComponent } from './pages/loai-chi-phi/loai-chi-phi.component
     KhachhangsComponent,
     TourComponent,
     DetailGridComponent,
+    ChiphiComponent,
 
       LoaiChiPhiComponent,
     NhanViensComponent,

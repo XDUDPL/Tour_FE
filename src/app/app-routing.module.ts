@@ -40,6 +40,11 @@ const routes: Routes = [
     canActivate: [ AuthGuardService ]
   },
   {
+    path: 'chiphi',
+    component: ChiphiComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
     path: 'profile',
     component: ProfileComponent,
     canActivate: [ AuthGuardService ]
