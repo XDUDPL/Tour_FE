@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { NgModule,Component, OnInit,enableProdMode } from '@angular/core';
 import {TourService} from "../../services/tour.service";
 import CustomStore from "devextreme/data/custom_store";
+import {TourLoaiService} from "../../services/tour-loai.service";
+import {Tour_Loai} from "../../shared/model/Tour_Loai";
 
 @Component({
   selector: 'app-tour',
@@ -12,43 +14,17 @@ export class TourComponent implements OnInit {
     data: [],
     totalCount: 0
   };
-  LoaiTour: object[] = [
-    {
-      "id": 1,
-      "tenLoai": "Nữ",
-      "moTaLoai":" ALo "
-    },
-    {
-      "id": 2,
-      "tenLoai": "Nam",
-      "moTaLoai":" phát "
-    },
-    {
-      "id": 3,
-      "tenLoai": "vl",
-      "moTaLoai":" gay "
-    },
-  ]
 
-  Tasks: object[] = [
-    {
-      "id": 1,
-      "tenLoai": "Nữ",
-      "moTaLoai":" ALo "
-    },
-    {
-      "id": 2,
-      "tenLoai": "Nam",
-      "moTaLoai":" phát "
-    },
-    {
-      "id": 3,
-      "tenLoai": "vl",
-      "moTaLoai":" gay "
-    },
-  ]
 
-  constructor(private tourService: TourService) { }
+  LoaiTour : Tour_Loai[] = [];
+
+
+  constructor(private tourService: TourService , private tourLoaiService: TourLoaiService  ) {
+    this.tourLoaiService.getTourLoais().toPromise().then((data)=>{
+      this.LoaiTour = data;
+      console.log(this.LoaiTour)
+    })
+  }
   getData() : void {
     this.dataSource = new CustomStore({
       load: ()=>{
@@ -58,9 +34,23 @@ export class TourComponent implements OnInit {
             totalCount: data.length
           }
         })
+      }, insert: (values) => {
+        delete values.__KEY__;
+        return values;
+      }, update: (values) => {
+        return values;
+      }, onUpdated: (key, values) => {
+        this.tourService.update({...key, ...values}).subscribe();
+      }, onInserted: (key, values) => {
+        this.tourService.create({...values}).subscribe();
+      }, remove: (values)=>{
+        return values;
+      }, onRemoved: (values)=>{
+        this.tourService.delete(values).subscribe();
       }
     });
   }
+
   ngOnInit(): void {
     this.getData();
   }

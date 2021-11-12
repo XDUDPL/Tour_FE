@@ -1,7 +1,12 @@
 <dx-data-grid id="gridContainer"
               [dataSource]="dataSource"
               [showBorders]="true"
-              [remoteOperations]="true">
+              [remoteOperations]="true"
+              keyExpr="id">
+
+  <dxo-paging [pageSize]="5"></dxo-paging>
+  <dxo-pager [showPageSizeSelector]="false" [showInfo]="false"></dxo-pager>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
   <dxo-editing
     mode="popup"
     [allowUpdating]="true"
@@ -16,8 +21,8 @@
     <dxo-form>
       <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
         <dxi-item dataField="tourTen"></dxi-item>
-        <dxi-item dataField="tourMoTa"></dxi-item>
-        <dxi-item dataField="idLoai"> </dxi-item>
+        <dxi-item dataField="tourMota"></dxi-item>
+        <dxi-item  dataField="loai.id"> </dxi-item>
       </dxi-item>
     </dxo-form>
   </dxo-editing>
@@ -25,29 +30,29 @@
   <dxi-column
     dataField="id"
     dataType="number"
-    caption="Id">
+    caption="ID tour">
   </dxi-column>
   <dxi-column
     dataField="tourTen"
     dataType="string"
-    caption="tourTen">
+    caption="Tên tour">
   </dxi-column>
   <dxi-column
-    dataField="tourMoTa"
+    dataField="tourMota"
     dataType="string"
     caption="mô tả tour">
   </dxi-column>
   <dxi-column
-    dataField="idLoai"
+    dataField="loai.id"
     dataType="string"
-    caption="tenLoai">
-    <dxo-lookup [dataSource]="LoaiTour" displayExpr="tenLoai" valueExpr="id"></dxo-lookup>
+    caption="Tên Loại">
+    <dxo-lookup [dataSource]="LoaiTour" displayExpr="loaiTen" valueExpr="id"></dxo-lookup>
   </dxi-column>
   <dxi-column
-    dataField="idLoai"
+    dataField="loai.loaiMota"
     dataType="string"
-    caption="moTaLoai">
-    <dxo-lookup [dataSource]="LoaiTour" displayExpr="moTaLoai" valueExpr="id"></dxo-lookup>
+    caption="mô tả loại">
+
   </dxi-column>
   <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
   <div *dxTemplate="let data of 'detail'">
