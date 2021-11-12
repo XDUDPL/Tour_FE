@@ -1,8 +1,8 @@
-<p>detail-grid works!</p>
-<dx-data-grid [dataSource]="tasksDataSource" [showBorders]="true" [columnAutoWidth]="true">
-  <dxi-column dataField="Subject" dataType="string"></dxi-column>
-  <dxi-column dataField="StartDate" dataType="date"></dxi-column>
-  <dxi-column dataField="DueDate" dataType="date"></dxi-column>
-  <dxi-column dataField="Priority" dataType="string"></dxi-column>
-  <dxi-column caption="Completed" dataType="boolean" [calculateCellValue]="completedValue"></dxi-column>
+<p>Chi tiết tour</p>
+<dx-data-grid [dataSource]="tasksDataSource" [showBorders]="true" [columnAutoWidth]="true"  >
+  <dxi-column caption="Tên thành phố " dataField="Subject" dataType="string"></dxi-column>
+  <dxi-column caption="Tên địa điểm " dataField="StartDate" dataType="date"></dxi-column>
+  <dxi-column caption=" Mô tả  " dataField="DueDate" dataType="date"></dxi-column>
+  <dxi-column caption="Thứ tự " dataField="Priority" dataType="string"></dxi-column>
+<!--  <dxi-column caption="Completed" dataType="boolean" [calculateCellValue]="completedValue"></dxi-column>-->
 </dx-data-grid>

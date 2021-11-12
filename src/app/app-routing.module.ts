@@ -11,6 +11,7 @@ import {KhachhangsComponent} from "./pages/khachhangs/khachhangs.component";
 import {NhanViensComponent} from "./pages/nhanviens/nhanviens.component";
 import {TourComponent} from "./pages/tour/tour.component";
 import {LoaiChiPhiComponent} from "./pages/loai-chi-phi/loai-chi-phi.component"
+import {ChiphiComponent} from "./pages/chiphi/chiphi.component";
 
 const routes: Routes = [
   {
@@ -37,6 +38,11 @@ const routes: Routes = [
   {
     path: 'tour',
     component: TourComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'chiphi',
+    component: ChiphiComponent,
     canActivate: [ AuthGuardService ]
   },
   {

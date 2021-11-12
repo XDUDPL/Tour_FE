@@ -33,6 +33,10 @@ export const navigation = [
       {
         text:' Loại Chi Phí ',
         path:'/loai-chi-phi'
+      },
+      {
+        text:' chi phí ',
+        path:'/chi-phi'
       }
     ]
   }
