@@ -3,6 +3,7 @@ import {TourService} from "../../services/tour.service";
 import CustomStore from "devextreme/data/custom_store";
 import {TourLoaiService} from "../../services/tour-loai.service";
 import {Tour_Loai} from "../../shared/model/Tour_Loai";
+import {Tour} from "../../shared/model/Tour";
 
 @Component({
   selector: 'app-tour',
@@ -18,11 +19,15 @@ export class TourComponent implements OnInit {
 
   LoaiTour : Tour_Loai[] = [];
 
-
+  tour :Tour[] = [];
   constructor(private tourService: TourService , private tourLoaiService: TourLoaiService  ) {
     this.tourLoaiService.getTourLoais().toPromise().then((data)=>{
       this.LoaiTour = data;
-      console.log(this.LoaiTour)
+    })
+    this.tourService.getAll().toPromise().then((data)=>{
+      data.forEach(e=>{
+        this.tour.push(e)
+      })
     })
   }
   getData() : void {

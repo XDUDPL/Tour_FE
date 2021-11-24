@@ -2,7 +2,8 @@
               [dataSource]="dataSource"
               [showBorders]="true"
               [remoteOperations]="true"
-              keyExpr="id">
+              keyExpr="id"
+             >
 
   <dxo-paging [pageSize]="5"></dxo-paging>
   <dxo-pager [showPageSizeSelector]="false" [showInfo]="false"></dxo-pager>
@@ -55,7 +56,7 @@
 
   </dxi-column>
   <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
-  <div *dxTemplate="let data of 'detail'">
-    <detail-grid1 [key1]="1"></detail-grid1>
+  <div *dxTemplate="let chiTiet of 'detail'">
+    <detail-grid1 [key]="chiTiet.key.id"></detail-grid1>
   </div>
 </dx-data-grid>
