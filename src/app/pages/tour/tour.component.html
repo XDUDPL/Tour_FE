@@ -2,7 +2,8 @@
               [dataSource]="dataSource"
               [showBorders]="true"
               [remoteOperations]="true"
-              keyExpr="id"
+              [focusedRowEnabled]="true"
+
              >
 
   <dxo-paging [pageSize]="5"></dxo-paging>
@@ -29,6 +30,7 @@
   </dxo-editing>
 
   <dxi-column
+    keyExpr="id"
     dataField="id"
     dataType="number"
     caption="ID tour">

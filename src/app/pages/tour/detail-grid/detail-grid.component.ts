@@ -9,16 +9,25 @@ import data = DevExpress.data;
 import CustomStore from "devextreme/data/custom_store";
 import {Tour} from "../../../shared/model/Tour";
 
+interface Tab {
+  text : string;
+}
+
 @Component({
   selector: 'detail-grid1',
   templateUrl: './detail-grid.component.html',
   providers: [TourChiTietService]
 })
 export class DetailGridComponent implements AfterViewInit {
+  isDiaDiemShow : boolean = true;
   dataSource: any = {
     data: [],
     totalCount: 0
   };
+  tab : Tab[] = [
+    {text : "dia diem"},
+    {text : "gia"}
+  ];
   // @ts-ignore
   @Input() key : number;
   // @ts-ignore
@@ -27,13 +36,15 @@ export class DetailGridComponent implements AfterViewInit {
 
   tourChiTiet: TourChiTiet[] =[] ;
 
-  constructor(private service: TourChiTietService) {
+  constructor(private service: TourChiTietService ) {
     this.service.getTourChiTiet().toPromise().then((data) =>{
       data.forEach(e=>{
         this.tourChiTiet.push(e);
       })
     })
   }
+
+
 
   ngAfterViewInit() {
 
@@ -49,5 +60,9 @@ export class DetailGridComponent implements AfterViewInit {
   }
   completedValue(rowData : any) {
     return rowData.Status == "Completed";
+  }
+
+  selectTab($event: any) {
+    this.isDiaDiemShow = !this.isDiaDiemShow;
   }
 }

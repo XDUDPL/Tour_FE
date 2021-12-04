@@ -32,11 +32,13 @@ export class TourComponent implements OnInit {
   }
   getData() : void {
     this.dataSource = new CustomStore({
+      key :["id"],
       load: ()=>{
         return this.tourService.getAll().toPromise().then((data)=>{
           return {
             data: data,
             totalCount: data.length
+
           }
         })
       }, insert: (values) => {

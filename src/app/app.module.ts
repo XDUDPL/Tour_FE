@@ -1,11 +1,11 @@
 
-import { NgModule } from '@angular/core';
+import { NgModule,Component, ViewChild, enableProdMode, } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule } from './layouts';
 import { FooterModule, ResetPasswordFormModule, CreateAccountFormModule, ChangePasswordFormModule, LoginFormModule } from './shared/components';
-import { DxDataGridModule,DxTemplateModule } from 'devextreme-angular';
+import {DxTabsModule, DxTemplateModule} from 'devextreme-angular';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,12 @@ import { DetailGridComponent } from './pages/tour/detail-grid/detail-grid.compon
 import {TourChiTietService} from "./services/tour-chi-tiet.service";
 import { LoaiChiPhiComponent } from './pages/loai-chi-phi/loai-chi-phi.component';
 import { ChiphiComponent } from './pages/chiphi/chiphi.component';
+import {
+  DxDropDownBoxModule,
+  DxTreeViewModule,
+  DxDataGridModule,
+} from 'devextreme-angular';
+import {DiaDiemService} from "./services/dia-diem.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,10 +37,10 @@ import { ChiphiComponent } from './pages/chiphi/chiphi.component';
     LoaiChiPhiComponent,
     NhanViensComponent,
     ChiphiComponent,
-
-
   ],
   imports: [
+    DxDropDownBoxModule,
+    DxTreeViewModule,
     BrowserModule,
     SideNavOuterToolbarModule,
     SideNavInnerToolbarModule,
@@ -48,7 +54,8 @@ import { ChiphiComponent } from './pages/chiphi/chiphi.component';
     AppRoutingModule,
     DxDataGridModule,
     HttpClientModule,
-    DxTemplateModule
+    DxTemplateModule,
+    DxTabsModule,
   ],
   providers: [AuthService,
     ScreenService,
@@ -57,7 +64,8 @@ import { ChiphiComponent } from './pages/chiphi/chiphi.component';
     KhachhangService,
     NhanVienService,
     TourService,
-    TourChiTietService
+    TourChiTietService,
+    DiaDiemService
   ],
   bootstrap: [AppComponent]
 })
