@@ -37,6 +37,10 @@ export const navigation = [
       {
         text:' chi phí ',
         path:'/chi-phi'
+      },
+      {
+        text:'Đoàn',
+        path:'/doan'
       }
     ]
   }

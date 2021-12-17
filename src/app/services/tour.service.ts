@@ -18,6 +18,10 @@ export class TourService {
   getAll(): Observable<Tour[]>{
     return this.http.get<Tour[]>(this.apiUrl);
   }
+  get(id: number): Observable<Tour[]>{
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Tour[]>(url);
+  }
   delete(tour: Tour): Observable<Tour>{
     const url = `${this.apiUrl}/${tour.id}`;
     return this.http.delete<Tour>(url);
