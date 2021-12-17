@@ -8,6 +8,8 @@ import DevExpress from "devextreme";
 import data = DevExpress.data;
 import CustomStore from "devextreme/data/custom_store";
 import {Tour} from "../../../shared/model/Tour";
+import {Gia} from "../../../shared/model/Gia";
+import {TourgiaService} from "../../../services/tourgia.service";
 
 interface Tab {
   text : string;
@@ -33,18 +35,27 @@ export class DetailGridComponent implements AfterViewInit {
   // @ts-ignore
 
   tourChiTietDataSource : DataSource;
+  // @ts-ignore
+  giaDataSource : DataSource;
 
   tourChiTiet: TourChiTiet[] =[] ;
 
-  constructor(private service: TourChiTietService ) {
+  gia:Gia[] = [];
+
+  constructor(private service: TourChiTietService , private giaService : TourgiaService) {
     this.service.getTourChiTiet().toPromise().then((data) =>{
       data.forEach(e=>{
         this.tourChiTiet.push(e);
       })
     })
+
+    this.giaService.getAll().toPromise().then((data)=>{
+      data.forEach(e=>{
+        this.gia.push(e);
+      })
+    })
+
   }
-
-
 
   ngAfterViewInit() {
 
@@ -55,8 +66,16 @@ export class DetailGridComponent implements AfterViewInit {
         }),
           filter: ["tour.id", "=", this.key]
       });
-    console.log(this.tourChiTietDataSource)
-    console.log(this.key)
+
+    this.giaDataSource = new DataSource({
+      store: new ArrayStore({
+        data: this.gia,
+        key: "id",
+      }),
+      filter: ["tourId", "=", this.key]
+    });
+    console.log(this.gia);
+
   }
   completedValue(rowData : any) {
     return rowData.Status == "Completed";
