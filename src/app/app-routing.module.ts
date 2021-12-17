@@ -12,6 +12,7 @@ import {NhanViensComponent} from "./pages/nhanviens/nhanviens.component";
 import {TourComponent} from "./pages/tour/tour.component";
 import {LoaiChiPhiComponent} from "./pages/loai-chi-phi/loai-chi-phi.component"
 import {ChiphiComponent} from "./pages/chiphi/chiphi.component";
+import {DoanComponent} from "./pages/doan/doan.component";
 
 const routes: Routes = [
   {
@@ -78,6 +79,11 @@ const routes: Routes = [
   {
     path:'loai-chi-phi',
     component: LoaiChiPhiComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path:'doan',
+    component: DoanComponent,
     canActivate: [AuthGuardService]
   },
   {

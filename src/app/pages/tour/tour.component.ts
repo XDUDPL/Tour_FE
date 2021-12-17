@@ -16,7 +16,6 @@ export class TourComponent implements OnInit {
     totalCount: 0
   };
 
-
   LoaiTour : Tour_Loai[] = [];
 
   tour :Tour[] = [];
@@ -38,7 +37,6 @@ export class TourComponent implements OnInit {
           return {
             data: data,
             totalCount: data.length
-
           }
         })
       }, insert: (values) => {
