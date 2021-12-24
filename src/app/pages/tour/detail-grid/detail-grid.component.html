@@ -35,3 +35,35 @@
   </dx-data-grid>
 
 </ng-container>
+
+<ng-container *ngIf = "!isDiaDiemShow" >
+
+  <dx-data-grid [dataSource]="giaDataSource" [showBorders]="true" [columnAutoWidth]="true">
+    <dxo-editing
+      mode="popup"
+      [allowUpdating]="true"
+      [allowAdding]="true"
+      [allowDeleting]="true">
+      <dxo-popup
+        title="giá tour"
+        [showTitle]="true"
+        [width]="700"
+        [height]="525">
+      </dxo-popup>
+      <dxo-form>
+        <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+
+          <dxi-item caption="giá số tiền" dataField="giaSotien"></dxi-item>
+          <dxi-item caption="giá từ ngày" dataField="giaTungay"> </dxi-item>
+          <dxi-item caption="ghi chú " dataField="ghichu"> </dxi-item>
+        </dxi-item>
+      </dxo-form>
+    </dxo-editing>
+
+    <dxi-column caption="giá" dataField="giaSotien" dataType="string"></dxi-column>
+    <dxi-column caption="từ ngày" dataField="giaTungay" dataType="string"></dxi-column>
+    <dxi-column caption="ghi chú " dataField="ghichu" dataType="string"></dxi-column>
+  </dx-data-grid>
+
+</ng-container>
+

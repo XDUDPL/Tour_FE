@@ -41,6 +41,10 @@ export const navigation = [
       {
         text:' Địa điểm ',
         path:'/dia-diem'
+      },
+      {
+        text:'Đoàn',
+        path:'/doan'
       }
       
     ]
