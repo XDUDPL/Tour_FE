@@ -39,9 +39,14 @@ export const navigation = [
         path:'/chi-phi'
       },
       {
+        text:' Địa điểm ',
+        path:'/dia-diem'
+      },
+      {
         text:'Đoàn',
         path:'/doan'
       }
+      
     ]
   }
 ];
