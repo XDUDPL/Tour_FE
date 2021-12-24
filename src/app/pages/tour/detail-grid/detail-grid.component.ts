@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit } from '@angular/core';
+import {Component, Input, AfterViewInit, OnInit} from '@angular/core';
 import DataSource from 'devextreme/data/data_source';
 import ArrayStore from 'devextreme/data/array_store';
 import {TourChiTietService} from "../../../services/tour-chi-tiet.service";
@@ -20,12 +20,18 @@ interface Tab {
   templateUrl: './detail-grid.component.html',
   providers: [TourChiTietService]
 })
-export class DetailGridComponent implements AfterViewInit {
+export class DetailGridComponent implements AfterViewInit , OnInit {
   isDiaDiemShow : boolean = true;
-  dataSource: any = {
+  dataSource1: any = {
     data: [],
     totalCount: 0
   };
+  dataSource2: any = {
+    data: [],
+    totalCount: 0
+  };
+
+
   tab : Tab[] = [
     {text : "dia diem"},
     {text : "gia"}
@@ -59,13 +65,13 @@ export class DetailGridComponent implements AfterViewInit {
 
   ngAfterViewInit() {
 
-      this.tourChiTietDataSource = new DataSource({
-        store: new ArrayStore({
-          data: this.tourChiTiet,
-          key: "id",
-        }),
-          filter: ["tour.id", "=", this.key]
-      });
+    this.tourChiTietDataSource = new DataSource({
+      store: new ArrayStore({
+        data: this.tourChiTiet,
+        key: "id",
+      }),
+      filter: ["tour.id", "=", this.key]
+    });
 
     this.giaDataSource = new DataSource({
       store: new ArrayStore({
@@ -83,5 +89,37 @@ export class DetailGridComponent implements AfterViewInit {
 
   selectTab($event: any) {
     this.isDiaDiemShow = !this.isDiaDiemShow;
+  }
+  getData1() : void {
+    this.dataSource1 = new CustomStore({
+      key :["id"],
+      load: ()=>{
+        return this.service.getTourChiTiet().toPromise().then((data)=>{
+          return {
+            data: data,
+            totalCount: data.length
+          }
+        })
+      }, insert: (values) => {
+        delete values.__KEY__;
+        return values;
+      }, update: (values) => {
+        return values;
+      }, onUpdated: (key, values) => {
+
+      }, onInserted: (key, values) => {
+        console.log(key)
+        this.service.create({...key}).subscribe();
+      }, remove: (values)=>{
+        return values;
+      }, onRemoved: (values)=>{
+        console.log(values)
+        // this.tourService.delete(values).subscribe();
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    this.getData1();
   }
 }

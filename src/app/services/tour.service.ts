@@ -26,11 +26,11 @@ export class TourService {
     const url = `${this.apiUrl}/${tour.id}`;
     return this.http.delete<Tour>(url);
   }
-  update(tour: Tour): Observable<Khachhang>{
+  update(tour: Tour): Observable<Tour>{
     const url = `${this.apiUrl}/${tour.id}`;
-    return this.http.put<Khachhang>(url, tour, httpOptions);
+    return this.http.put<Tour>(url, tour, httpOptions);
   }
-  create(tour: Tour): Observable<Khachhang>{
-    return this.http.post<Khachhang>(this.apiUrl, tour, httpOptions);
+  create(tour: Tour): Observable<Tour>{
+    return this.http.post<Tour>(this.apiUrl, tour, httpOptions);
   }
 }

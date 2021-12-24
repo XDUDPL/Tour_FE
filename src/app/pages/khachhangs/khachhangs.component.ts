@@ -33,6 +33,7 @@ export class KhachhangsComponent implements OnInit {
       }, remove: (values)=>{
           return values;
       }, onRemoved: (values)=>{
+        console.log(values)
           this.khachHangService.delete(values).subscribe();
       }
     });
