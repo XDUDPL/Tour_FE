@@ -27,6 +27,9 @@ import {
   DxDataGridModule,
 } from 'devextreme-angular';
 import {DiaDiemService} from "./services/dia-diem.service";
+import { DoanComponent } from './pages/doan/doan.component';
+import {TourDoanService} from "./services/tour-doan.service";
+import { DoanDetailComponent } from './pages/doan/doan-detail/doan-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +40,8 @@ import {DiaDiemService} from "./services/dia-diem.service";
     LoaiChiPhiComponent,
     NhanViensComponent,
     ChiphiComponent,
+    DoanComponent,
+    DoanDetailComponent,
   ],
   imports: [
     DxDropDownBoxModule,
@@ -65,7 +70,8 @@ import {DiaDiemService} from "./services/dia-diem.service";
     NhanVienService,
     TourService,
     TourChiTietService,
-    DiaDiemService
+    DiaDiemService,
+    TourDoanService
   ],
   bootstrap: [AppComponent]
 })
