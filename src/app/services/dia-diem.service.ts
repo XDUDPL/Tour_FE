@@ -16,7 +16,9 @@ const httpOptions = {
 })
 export class DiaDiemService {
   private apiUrl: string ='http://localhost:8080/api/tourdiadiem';
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpClient) {
+    
+    }
   getAll(): Observable<DiaDiem[]>{
     return this.http.get<DiaDiem[]>(this.apiUrl);
   }

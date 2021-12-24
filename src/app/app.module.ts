@@ -27,6 +27,7 @@ import {
   DxDataGridModule,
 } from 'devextreme-angular';
 import {DiaDiemService} from "./services/dia-diem.service";
+import { DiaDiemComponent } from './pages/dia-diem/dia-diem.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import {DiaDiemService} from "./services/dia-diem.service";
     LoaiChiPhiComponent,
     NhanViensComponent,
     ChiphiComponent,
+    DiaDiemComponent,
   ],
   imports: [
     DxDropDownBoxModule,

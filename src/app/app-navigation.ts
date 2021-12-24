@@ -37,7 +37,12 @@ export const navigation = [
       {
         text:' chi phí ',
         path:'/chi-phi'
+      },
+      {
+        text:' Địa điểm ',
+        path:'/dia-diem'
       }
+      
     ]
   }
 ];
